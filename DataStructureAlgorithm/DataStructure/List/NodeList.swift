@@ -78,7 +78,7 @@ class NodeList<T:Equatable> {
         return nil
     }
     
-    /// 根据指定值查找某个链表节点的所有
+    /// 根据指定值查找某个链表节点的索引
     ///
     /// - Parameters:
     ///   - nodeList: 链表
