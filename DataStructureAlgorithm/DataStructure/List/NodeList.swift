@@ -23,6 +23,21 @@ class NodeList<T> {
     init(val:T) {
         self.value = val
     }
+    
+    
+    /// 遍历链表
+    ///
+    /// - Parameter nodeList: 链表
+    /// - Returns: 链表长度
+    func traverse(with nodeList:NodeList?) -> Int {
+        var nodeListLength:Int = 0
+        var tmpNode = nodeList
+        while tmpNode != nil {
+            nodeListLength += 1
+            tmpNode = tmpNode!.next
+        }
+        return nodeListLength
+    }
 
 }
 

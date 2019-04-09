@@ -22,8 +22,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         node1.next = node2
         node2.next = node3
         node3.next = node4
-        
         print(node1)
+        
+        let listLength = node1.traverse(with: node1)
+        print(listLength)
     }
 
     override func tearDown() {
