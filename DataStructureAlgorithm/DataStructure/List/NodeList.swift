@@ -121,6 +121,29 @@ class NodeList<T:Equatable> {
             return node
         }
     }
+    
+    
+    /// 删除指定位置的节点并返回新的列表
+    ///
+    /// - Parameters:
+    ///   - nodeList: 链表
+    ///   - index: 待删除的位置
+    /// - Returns: 删除后的链表
+    func delete(with nodeList:NodeList?, index:Int) -> NodeList? {
+        guard let nodeL = nodeList else { return nil }
+        if nodeL.traverse(with: nodeL) <= index {
+            return nodeL
+        }
+        
+        if index == 0 {
+            return nodeL.next
+        } 
+        
+        let previousN = nodeL.find(with: nodeL, at: index - 1)
+        let currentN = nodeL.find(with: nodeL, at: index)
+        previousN?.next = currentN?.next
+        return nodeL
+    }
 
 }
 

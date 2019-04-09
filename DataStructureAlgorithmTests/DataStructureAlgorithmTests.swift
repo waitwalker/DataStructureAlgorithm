@@ -43,11 +43,14 @@ class DataStructureAlgorithmTests: XCTestCase {
         let value1Index = node1.find(with: node1, value: 8)
         print("value1Index:\(value1Index ?? 0)")
         
+        // 在指定位置插入节点
         let newNode = NodeList(val: 18)
         let newList = node1.insert(with: node1, node: newNode, index: 2)
-        print(newList)
+        print(newList as Any)
         
-        
+        // 删除某个位置上的节点
+        let detetedList = node1.delete(with: node1, index: 2)
+        print(detetedList as Any)
     }
 
     override func tearDown() {
