@@ -43,7 +43,9 @@ class DataStructureAlgorithmTests: XCTestCase {
         let value1Index = node1.find(with: node1, value: 8)
         print("value1Index:\(value1Index ?? 0)")
         
-        
+        let newNode = NodeList(val: 18)
+        let newList = node1.insert(with: node1, node: newNode, index: 2)
+        print(newList)
         
         
     }

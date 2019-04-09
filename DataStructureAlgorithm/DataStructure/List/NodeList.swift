@@ -59,6 +59,25 @@ class NodeList<T:Equatable> {
         return nil
     }
     
+    /// 根据指定索引查找某个链表节点
+    ///
+    /// - Parameters:
+    ///   - nodeList: 链表
+    ///   - index: 要查询的节点
+    /// - Returns: 某个索引节点
+    func find(with nodeList:NodeList?, at index:Int) -> NodeList? {
+        var tmpNode = nodeList
+        var currentIndex:Int = 0
+        while tmpNode != nil {
+            if currentIndex == index {
+                return tmpNode
+            }
+            currentIndex += 1
+            tmpNode = tmpNode?.next
+        }
+        return nil
+    }
+    
     /// 根据指定值查找某个链表节点的所有
     ///
     /// - Parameters:
@@ -77,6 +96,31 @@ class NodeList<T:Equatable> {
         }
         return nil
     }
+    
+    
+    /// 在链表指定位置插入新的节点并返回新的链表
+    ///
+    /// - Parameters:
+    ///   - nodeList: 链表
+    ///   - node: 待插入节点
+    ///   - index: 插入位置
+    /// - Returns: 新的链表
+    func insert(with nodeList:NodeList?, node:NodeList, index:Int) -> NodeList? {
+        guard let nodeL = nodeList else { return node }
+        if traverse(with: nodeL) <= index {
+            return node
+        }
+        var previousN:NodeList?
+        if index != 0 {
+            previousN = nodeL.find(with: nodeL, at: index - 1)
+            node.next = previousN!.next
+            previousN!.next = node
+            return nodeL
+        } else {
+            node.next = nodeL
+            return node
+        }
+    }
 
 }
 
@@ -88,6 +132,7 @@ extension NodeList:CustomStringConvertible {
     }
 }
 
+// MARK: - 判断两个节点是否相等
 extension NodeList:Equatable {
     static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
         return lhs.value == rhs.value
