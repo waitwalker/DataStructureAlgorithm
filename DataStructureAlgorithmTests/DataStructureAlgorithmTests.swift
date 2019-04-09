@@ -14,6 +14,7 @@ class DataStructureAlgorithmTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
+        // 调试创建链表
         let node1 = NodeList(val: 2)
         let node2 = NodeList(val: 3)
         let node3 = NodeList(val: 8)
@@ -24,8 +25,17 @@ class DataStructureAlgorithmTests: XCTestCase {
         node3.next = node4
         print(node1)
         
+        // 遍历链表
         let listLength = node1.traverse(with: node1)
         print(listLength)
+        
+        // 根据指定索引查找某个链表节点的值
+        let index0Value = node1.find(with: node1, index: 0)
+        print("index0Value:\(index0Value ?? 0)")
+        
+        let index1Value = node1.find(with: node1, index: 8)
+        print("index1Value:\(index1Value ?? 1)")
+        
     }
 
     override func tearDown() {

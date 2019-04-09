@@ -25,6 +25,7 @@ class NodeList<T> {
     }
     
     
+    // MARK: - 遍历链表
     /// 遍历链表
     ///
     /// - Parameter nodeList: 链表
@@ -37,6 +38,26 @@ class NodeList<T> {
             tmpNode = tmpNode!.next
         }
         return nodeListLength
+    }
+    
+    
+    /// 根据指定索引查找某个链表节点的值
+    ///
+    /// - Parameters:
+    ///   - nodeList: 链表
+    ///   - index: 要查询的节点
+    /// - Returns: 某个索引节点的值
+    func find(with nodeList:NodeList?, index:Int) -> T? {
+        var tmpNode = nodeList
+        var currentIndex:Int = 0
+        while tmpNode != nil {
+            if currentIndex == index {
+                return tmpNode?.value
+            }
+            currentIndex += 1
+            tmpNode = tmpNode?.next
+        }
+        return nil
     }
 
 }
