@@ -36,6 +36,16 @@ class DataStructureAlgorithmTests: XCTestCase {
         let index1Value = node1.find(with: node1, index: 8)
         print("index1Value:\(index1Value ?? 1)")
         
+        // 根据指定值查找某个链表节点的所有
+        let value0Index = node1.find(with: node1, value: 2)
+        print("value0Index:\(value0Index ?? 0)")
+        
+        let value1Index = node1.find(with: node1, value: 8)
+        print("value1Index:\(value1Index ?? 0)")
+        
+        
+        
+        
     }
 
     override func tearDown() {

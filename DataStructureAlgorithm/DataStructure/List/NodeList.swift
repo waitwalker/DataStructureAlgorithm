@@ -8,8 +8,7 @@
 
 import UIKit
 
-class NodeList<T> {
-    
+class NodeList<T:Equatable> {
     
     /// 节点元素的值
     var value:T
@@ -59,6 +58,25 @@ class NodeList<T> {
         }
         return nil
     }
+    
+    /// 根据指定值查找某个链表节点的所有
+    ///
+    /// - Parameters:
+    ///   - nodeList: 链表
+    ///   - value: 值
+    /// - Returns: 值对应节点的索引
+    func find(with nodeList:NodeList?, value:T?) -> Int? {
+        var tmpNode = nodeList
+        var currentIndex:Int = 0
+        while tmpNode != nil {
+            if tmpNode?.value == value {
+                return currentIndex
+            }
+            currentIndex += 1
+            tmpNode = tmpNode?.next
+        }
+        return nil
+    }
 
 }
 
@@ -69,3 +87,12 @@ extension NodeList:CustomStringConvertible {
         return "\(value) -> \(String(describing:newNext))"
     }
 }
+
+extension NodeList:Equatable {
+    static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
+        return lhs.value == rhs.value
+    }   
+}
+
+
+
