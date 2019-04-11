@@ -15,11 +15,7 @@ import UIKit
 
 class Stack<T:Equatable> {
     
-    var nodeList:NodeList<T>?
-    
-    // MARK: - 构造方法
-    init() {
-    }
+    private(set) var nodeList:NodeList<T>?
     
     // 是否为空
     var isEmpty:Bool {
@@ -27,6 +23,11 @@ class Stack<T:Equatable> {
             return nodeList == nil ? true : false
         }
     }
+    
+    // MARK: - 构造方法
+    init() {
+    }
+    
     
     /// 压栈操作
     ///
@@ -52,6 +53,18 @@ class Stack<T:Equatable> {
             return nodeL.find(with: nodeL, at: nodeLength - 1)?.value
         } else {
             return nodeL.value
+        }
+    }
+    
+    
+    /// pop 移除栈顶元素
+    func pop() -> Void {
+        guard let nodeL = nodeList else { return }
+        let nodeLength = nodeL.traverse(with: nodeL)
+        if nodeLength > 1 {
+            nodeList = nodeList?.delete(with: nodeList, index: nodeLength - 1)
+        } else {
+            nodeList = nil
         }
     }
 }

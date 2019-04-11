@@ -76,6 +76,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         let top = stack.top()
         print(top as Any)
         
+        // pop
+        stack.pop()
+        print(stack.nodeList as Any)
+        
     }
 
     override func tearDown() {
