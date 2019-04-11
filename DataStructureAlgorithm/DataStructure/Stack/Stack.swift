@@ -21,6 +21,14 @@ class Stack<T:Equatable> {
     init() {
     }
     
+    // 是否为空
+    var isEmpty:Bool {
+        get {
+            return nodeList == nil ? true : false
+        }
+    }
+    
+    
     
     /// 压栈操作
     ///

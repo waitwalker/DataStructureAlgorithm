@@ -59,13 +59,18 @@ class DataStructureAlgorithmTests: XCTestCase {
     
     // MARK: - 栈的测试
     func stackTest() -> Void {
+        
         let stack = Stack<Int>()
+        
+        // push 
         stack.push(element: 1)
         stack.push(element: 2)
         stack.push(element: 3)
         stack.push(element: 4)
         stack.push(element: 5)
-        print(stack.nodeList)
+        
+        // isEmpty
+        print(stack.isEmpty)
         
     }
 
