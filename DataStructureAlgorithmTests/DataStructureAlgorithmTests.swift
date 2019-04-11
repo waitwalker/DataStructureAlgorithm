@@ -100,6 +100,22 @@ class DataStructureAlgorithmTests: XCTestCase {
         stackA.pop()
         print(stackA.elements)
     }
+    
+    // MARK: - 队列测试
+    func queueTest() -> Void {
+        var queue = Queue<Int>()
+        
+        // enqueue
+        queue.enqueue(element: 1)
+        queue.enqueue(element: 2)
+        queue.enqueue(element: 3)
+        print(queue.elements)
+        
+        // dequeue
+        queue.dequeue()
+        print(queue.elements)
+        
+    }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -113,6 +129,9 @@ class DataStructureAlgorithmTests: XCTestCase {
         
         // 栈测试
         //stackTest()
+        
+        // 队列测试
+        queueTest()
         
     }
     
