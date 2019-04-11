@@ -28,8 +28,6 @@ class Stack<T:Equatable> {
         }
     }
     
-    
-    
     /// 压栈操作
     ///
     /// - Parameter element: 压栈元素
@@ -44,5 +42,16 @@ class Stack<T:Equatable> {
         }
     }
     
-    
+    /// 获取栈顶元素
+    ///
+    /// - Returns: 栈顶元素
+    func top() -> T? {
+        guard let nodeL = nodeList else { return nil }
+        let nodeLength = nodeL.traverse(with: nodeL)
+        if nodeLength > 1 {
+            return nodeL.find(with: nodeL, at: nodeLength - 1)?.value
+        } else {
+            return nodeL.value
+        }
+    }
 }

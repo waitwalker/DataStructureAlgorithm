@@ -72,6 +72,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         // isEmpty
         print(stack.isEmpty)
         
+        // top
+        let top = stack.top()
+        print(top as Any)
+        
     }
 
     override func tearDown() {
