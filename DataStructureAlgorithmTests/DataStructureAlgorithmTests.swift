@@ -80,6 +80,26 @@ class DataStructureAlgorithmTests: XCTestCase {
         stack.pop()
         print(stack.nodeList as Any)
         
+        // MARK: - 数组实现栈
+        var stackA = StackA<Int>()
+        
+        // push
+        stackA.push(element: 1)
+        stackA.push(element: 2)
+        stackA.push(element: 3)
+        print(stackA.elements)
+        
+        // isEmpty
+        print(stackA.isEmpty)
+        
+        // top
+        let topA = stackA.top
+        print(topA as Any)
+        
+        // pop
+        stackA.pop()
+        print(stackA.elements)
+        
     }
 
     override func tearDown() {
@@ -94,6 +114,12 @@ class DataStructureAlgorithmTests: XCTestCase {
         
         // 栈测试
         stackTest()
+        
+    }
+    
+    
+    func address(o: UnsafeRawPointer) -> String {
+        return String.init(format: "%018p", Int(bitPattern: o))
     }
 
     func testPerformanceExample() {

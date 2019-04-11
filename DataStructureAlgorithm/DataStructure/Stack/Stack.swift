@@ -13,6 +13,7 @@
 
 import UIKit
 
+// MARK: - 栈的链表实现
 class Stack<T:Equatable> {
     
     private(set) var nodeList:NodeList<T>?
@@ -68,3 +69,47 @@ class Stack<T:Equatable> {
         }
     }
 }
+
+// MARK: - 栈的数组实现
+struct StackA<T> {
+    
+    private(set) var elements:[T] = []
+    
+    /// isEmpty
+    var isEmpty:Bool{
+        get {
+            return elements.count == 0 ? true : false
+        }
+    }
+    
+    /// top
+    var top:T? {
+        get {
+            return elements.count > 0 ? elements.last : nil
+        }
+    }
+    
+    
+    // MARK: - 构造函数
+    init() {
+        
+    }
+    
+    
+    /// push压栈操作
+    ///
+    /// - Parameter element: 压栈元素
+    mutating func push(element:T) -> Void {
+        elements.append(element)
+    }
+    
+    
+    /// pop出栈操作
+    mutating func pop() -> Void {
+        guard elements.count > 0 else {
+            return
+        }
+        elements.removeLast()
+    }
+}
+
