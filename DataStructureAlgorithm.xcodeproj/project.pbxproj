@@ -15,6 +15,8 @@
 		CA2425A7225C3B430069CF87 /* DataStructureAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2425A6225C3B430069CF87 /* DataStructureAlgorithmTests.swift */; };
 		CA2425B2225C3B430069CF87 /* DataStructureAlgorithmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2425B1225C3B430069CF87 /* DataStructureAlgorithmUITests.swift */; };
 		CA2425C2225C3D100069CF87 /* NodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2425C1225C3D100069CF87 /* NodeList.swift */; };
+		CA66BB5F225EC8ED0038B52B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66BB5E225EC8ED0038B52B /* Stack.swift */; };
+		CA66BB62225F150B0038B52B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66BB61225F150B0038B52B /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		CA2425B1225C3B430069CF87 /* DataStructureAlgorithmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructureAlgorithmUITests.swift; sourceTree = "<group>"; };
 		CA2425B3225C3B430069CF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA2425C1225C3D100069CF87 /* NodeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeList.swift; sourceTree = "<group>"; };
+		CA66BB5E225EC8ED0038B52B /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		CA66BB61225F150B0038B52B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 		CA2425BF225C3B510069CF87 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				CA66BB60225F14F70038B52B /* Queue */,
+				CA66BB5D225EC8DB0038B52B /* Stack */,
 				CA2425C0225C3B640069CF87 /* List */,
 			);
 			path = DataStructure;
@@ -142,6 +148,22 @@
 				CA2425C1225C3D100069CF87 /* NodeList.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		CA66BB5D225EC8DB0038B52B /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				CA66BB5E225EC8ED0038B52B /* Stack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		CA66BB60225F14F70038B52B /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				CA66BB61225F150B0038B52B /* Queue.swift */,
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA66BB62225F150B0038B52B /* Queue.swift in Sources */,
+				CA66BB5F225EC8ED0038B52B /* Stack.swift in Sources */,
 				CA242594225C3B410069CF87 /* ViewController.swift in Sources */,
 				CA242592225C3B410069CF87 /* AppDelegate.swift in Sources */,
 				CA2425C2225C3D100069CF87 /* NodeList.swift in Sources */,

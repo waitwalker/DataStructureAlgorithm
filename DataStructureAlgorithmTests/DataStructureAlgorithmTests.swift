@@ -13,7 +13,11 @@ class DataStructureAlgorithmTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-
+        
+    }
+    
+    // MARK: - 链表测试
+    func nodeListTest() -> Void {
         // 调试创建链表
         let node1 = NodeList(val: 2)
         let node2 = NodeList(val: 3)
@@ -52,6 +56,66 @@ class DataStructureAlgorithmTests: XCTestCase {
         let detetedList = node1.delete(with: node1, index: 2)
         print(detetedList as Any)
     }
+    
+    // MARK: - 栈的测试
+    func stackTest() -> Void {
+        
+        let stack = Stack<Int>()
+        
+        // push 
+        stack.push(element: 1)
+        stack.push(element: 2)
+        stack.push(element: 3)
+        stack.push(element: 4)
+        stack.push(element: 5)
+        
+        // isEmpty
+        print(stack.isEmpty)
+        
+        // top
+        let top = stack.top()
+        print(top as Any)
+        
+        // pop
+        stack.pop()
+        print(stack.nodeList as Any)
+        
+        // MARK: - 数组实现栈
+        var stackA = StackA<Int>()
+        
+        // push
+        stackA.push(element: 1)
+        stackA.push(element: 2)
+        stackA.push(element: 3)
+        print(stackA.elements)
+        
+        // isEmpty
+        print(stackA.isEmpty)
+        
+        // top
+        let topA = stackA.top
+        print(topA as Any)
+        
+        // pop
+        stackA.pop()
+        print(stackA.elements)
+    }
+    
+    // MARK: - 队列测试
+    func queueTest() -> Void {
+        var queue = Queue<Int>()
+        
+        // enqueue
+        queue.enqueue(element: 1)
+        queue.enqueue(element: 2)
+        queue.enqueue(element: 3)
+        print(queue.elements)
+        
+        // dequeue
+        queue.dequeue()
+        print(queue.elements)
+        
+    }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -60,6 +124,20 @@ class DataStructureAlgorithmTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // 链表测试
+        //nodeListTest()
+        
+        // 栈测试
+        //stackTest()
+        
+        // 队列测试
+        queueTest()
+        
+    }
+    
+    
+    func address(o: UnsafeRawPointer) -> String {
+        return String.init(format: "%018p", Int(bitPattern: o))
     }
 
     func testPerformanceExample() {
