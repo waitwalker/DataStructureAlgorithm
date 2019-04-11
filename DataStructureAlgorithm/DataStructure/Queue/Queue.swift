@@ -36,7 +36,6 @@ struct Queue<T> {
         elements.append(element)
     }
     
-    
     /// dequeue操作
     mutating func dequeue() -> Void {
         guard elements.count > 0 else {
