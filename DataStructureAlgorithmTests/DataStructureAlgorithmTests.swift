@@ -99,7 +99,6 @@ class DataStructureAlgorithmTests: XCTestCase {
         // pop
         stackA.pop()
         print(stackA.elements)
-        
     }
 
     override func tearDown() {
@@ -113,7 +112,7 @@ class DataStructureAlgorithmTests: XCTestCase {
         //nodeListTest()
         
         // 栈测试
-        stackTest()
+        //stackTest()
         
     }
     
