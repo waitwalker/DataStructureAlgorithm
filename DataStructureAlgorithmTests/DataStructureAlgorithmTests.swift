@@ -117,6 +117,43 @@ class DataStructureAlgorithmTests: XCTestCase {
         
     }
 
+    // MARK: - 树测试
+    func treeTest() -> Void {
+
+        // 定义一个根节点
+        let chinaRootNode = Tree(value: "中国")
+        // 根节点的一个子节点
+        let beijingNode = Tree(value: "北京")
+        let dongchengNode = Tree(value: "东城")
+        let xichengNode = Tree(value: "西城")
+        let fengtaiNode = Tree(value: "丰台")
+
+
+        // 根节点的一个子节点
+        let jiangsuNode = Tree(value: "江苏")
+        let nanjingNode = Tree(value: "南京")
+        let xuzhouNode = Tree(value: "徐州")
+        let changzhouNode = Tree(value: "常州")
+
+
+        chinaRootNode.addChild(treeNode: beijingNode)
+        chinaRootNode.addChild(treeNode: jiangsuNode)
+
+        beijingNode.addChild(treeNode: dongchengNode)
+        beijingNode.addChild(treeNode: xichengNode)
+        beijingNode.addChild(treeNode: fengtaiNode)
+
+        jiangsuNode.addChild(treeNode: nanjingNode)
+        jiangsuNode.addChild(treeNode: xuzhouNode)
+        jiangsuNode.addChild(treeNode: changzhouNode)
+
+        print(chinaRootNode.children)
+
+
+
+
+    }
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
@@ -131,8 +168,11 @@ class DataStructureAlgorithmTests: XCTestCase {
         //stackTest()
         
         // 队列测试
-        queueTest()
-        
+        //queueTest()
+
+        // 树测试
+        treeTest()
+
     }
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A86000322635231003ACC9B /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A86000222635231003ACC9B /* Tree.swift */; };
 		CA242592225C3B410069CF87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA242591225C3B410069CF87 /* AppDelegate.swift */; };
 		CA242594225C3B410069CF87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA242593225C3B410069CF87 /* ViewController.swift */; };
 		CA242597225C3B410069CF87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA242595225C3B410069CF87 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A86000222635231003ACC9B /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		CA24258E225C3B410069CF87 /* DataStructureAlgorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructureAlgorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA242591225C3B410069CF87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA242593225C3B410069CF87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A86000022635206003ACC9B /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				1A8600012263521E003ACC9B /* Tree */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		1A8600012263521E003ACC9B /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				1A86000222635231003ACC9B /* Tree.swift */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
 		CA242585225C3B410069CF87 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +153,7 @@
 		CA2425BF225C3B510069CF87 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				1A86000022635206003ACC9B /* Tree */,
 				CA66BB60225F14F70038B52B /* Queue */,
 				CA66BB5D225EC8DB0038B52B /* Stack */,
 				CA2425C0225C3B640069CF87 /* List */,
@@ -300,6 +319,7 @@
 				CA66BB62225F150B0038B52B /* Queue.swift in Sources */,
 				CA66BB5F225EC8ED0038B52B /* Stack.swift in Sources */,
 				CA242594225C3B410069CF87 /* ViewController.swift in Sources */,
+				1A86000322635231003ACC9B /* Tree.swift in Sources */,
 				CA242592225C3B410069CF87 /* AppDelegate.swift in Sources */,
 				CA2425C2225C3D100069CF87 /* NodeList.swift in Sources */,
 			);
