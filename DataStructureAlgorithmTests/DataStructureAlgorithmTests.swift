@@ -153,6 +153,8 @@ class DataStructureAlgorithmTests: XCTestCase {
     
     // 二叉树测试
     func binaryTreeTest() -> Void {
+        
+        // 二叉树的定义
         let rootNode = BinaryTree(value: "北京四中网校")
         let beicheng = BinaryTree(value: "北城总校")
         let nancheng = BinaryTree(value: "南城总校")
@@ -177,8 +179,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         xicheng.leftChildNode = huangchenggen
         xicheng.rightChildNode = houhai
         
+        // 先序遍历 递归
+        rootNode.traversePreOrder(binaryTree: rootNode)
         
-        
+        print(rootNode.count)
         
         
         
