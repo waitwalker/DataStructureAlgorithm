@@ -149,9 +149,42 @@ class DataStructureAlgorithmTests: XCTestCase {
 
         print(chinaRootNode.children)
 
-
-
-
+    }
+    
+    // 二叉树测试
+    func binaryTreeTest() -> Void {
+        let rootNode = BinaryTree(value: "北京四中网校")
+        let beicheng = BinaryTree(value: "北城总校")
+        let nancheng = BinaryTree(value: "南城总校")
+        
+        let xicheng = BinaryTree(value: "西城分校")
+        let dongcheng = BinaryTree(value: "东城分校")
+        let fengtai = BinaryTree(value: "丰台分校")
+        let fangshan = BinaryTree(value: "房山分校")
+        
+        let huangchenggen = BinaryTree(value: "皇城根代理")
+        let houhai = BinaryTree(value: "后海代理")
+        
+        rootNode.leftChildNode = beicheng
+        rootNode.rightChildNode = nancheng
+        
+        beicheng.leftChildNode = xicheng
+        beicheng.rightChildNode = dongcheng
+        
+        nancheng.leftChildNode = fengtai
+        nancheng.rightChildNode = fangshan
+        
+        xicheng.leftChildNode = huangchenggen
+        xicheng.rightChildNode = houhai
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     override func tearDown() {
@@ -171,7 +204,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         //queueTest()
 
         // 树测试
-        treeTest()
+        //treeTest()
+        
+        // 二叉树测试
+        binaryTreeTest()
 
     }
     

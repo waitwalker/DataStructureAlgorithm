@@ -18,6 +18,7 @@
 		CA2425C2225C3D100069CF87 /* NodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2425C1225C3D100069CF87 /* NodeList.swift */; };
 		CA66BB5F225EC8ED0038B52B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66BB5E225EC8ED0038B52B /* Stack.swift */; };
 		CA66BB62225F150B0038B52B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66BB61225F150B0038B52B /* Queue.swift */; };
+		CA7F5A00226589A5007E3C93 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F59FF226589A5007E3C93 /* BinaryTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CA2425C1225C3D100069CF87 /* NodeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeList.swift; sourceTree = "<group>"; };
 		CA66BB5E225EC8ED0038B52B /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		CA66BB61225F150B0038B52B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		CA7F59FF226589A5007E3C93 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		1A86000022635206003ACC9B /* Tree */ = {
 			isa = PBXGroup;
 			children = (
+				CA7F59FE22658968007E3C93 /* BinaryTree */,
 				1A8600012263521E003ACC9B /* Tree */,
 			);
 			path = Tree;
@@ -183,6 +186,14 @@
 				CA66BB61225F150B0038B52B /* Queue.swift */,
 			);
 			path = Queue;
+			sourceTree = "<group>";
+		};
+		CA7F59FE22658968007E3C93 /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				CA7F59FF226589A5007E3C93 /* BinaryTree.swift */,
+			);
+			path = BinaryTree;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA66BB62225F150B0038B52B /* Queue.swift in Sources */,
+				CA7F5A00226589A5007E3C93 /* BinaryTree.swift in Sources */,
 				CA66BB5F225EC8ED0038B52B /* Stack.swift in Sources */,
 				CA242594225C3B410069CF87 /* ViewController.swift in Sources */,
 				1A86000322635231003ACC9B /* Tree.swift in Sources */,
