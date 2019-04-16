@@ -80,13 +80,45 @@ class BinaryTree<T> {
         
     }
     
+    
+    /// 最小深度
+    ///
+    /// - Parameter binaryTree: 二叉树节点
+    /// - Returns: 最小深度
     func minDepth(binaryTree:BinaryTree?) -> Int {
         guard let binaryTreeNode = binaryTree else { return 0 }
         let leftMinDepth = binaryTreeNode.minDepth(binaryTree: binaryTreeNode.leftChildNode)
         let rightMinDepth = binaryTreeNode.minDepth(binaryTree: binaryTreeNode.rightChildNode)
         return min(leftMinDepth, rightMinDepth) + 1
+    }
+    
+    /***
+        先根,然后左子树,然后右子树 非递归实现:
+        1)用栈来存储当前节点,判断当前节点是否为空,不为空,将当前节点压栈操作.
+        2)判断当前节点的左子树是否为空,左子树不为空则将当前节点的左子树赋值给当前节点;若为空,则取出栈的元素,将栈顶元素的右子树赋值给当前节点,执行1)
+        3)直到当前节点为空并且栈为空,遍历结束
+     **/
+    /// 先序遍历 
+    ///
+    /// - Parameter binaryTree: 二叉树节点
+    /// - Returns: 二叉树节点总数
+    func traversePreOrderNonrecursive(binaryTree:BinaryTree?) -> Int {
+        var treeStack:[BinaryTree] = []
+        var currentNode = binaryTree
+        var count:Int = 0
         
-        
+        while !treeStack.isEmpty || currentNode != nil{
+            if currentNode != nil {
+                treeStack.append(currentNode!)
+                currentNode = currentNode?.leftChildNode
+                count += 1
+                print(currentNode?.value as Any)
+            } else {
+                let lastTreeNode = treeStack.removeLast()
+                currentNode = lastTreeNode.rightChildNode
+            }
+        }
+        return count
     }
 }
 

@@ -199,6 +199,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         let minDepth = rootNode.minDepth(binaryTree: rootNode)
         print(minDepth)
         
+        // 先序遍历 非递归
+        let tota = rootNode.traversePreOrderNonrecursive(binaryTree: rootNode)
+        print(tota)
+        
         
     }
 
