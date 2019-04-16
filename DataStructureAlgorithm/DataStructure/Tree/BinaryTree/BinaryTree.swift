@@ -52,6 +52,17 @@ class BinaryTree<T> {
         print("当前节点值:",binaryTreeNode.value,separator: "",terminator: " \n")
         binaryTreeNode.traverseInOrder(binaryTree: binaryTreeNode.rightChildNode)
     }
+    
+    
+    /// 后序遍历 先左子树,然后右子树,然后根
+    ///
+    /// - Parameter binaryTree: 二叉树节点
+    func traversePostOrder(binaryTree:BinaryTree?) -> Void {
+        guard let binaryTreeNode = binaryTree else { return }
+        binaryTreeNode.traversePostOrder(binaryTree: binaryTreeNode.leftChildNode)
+        binaryTreeNode.traversePostOrder(binaryTree: binaryTreeNode.rightChildNode)
+        print("当前节点值:",binaryTreeNode.value,separator: "",terminator: " \n")
+    }
 }
 
 

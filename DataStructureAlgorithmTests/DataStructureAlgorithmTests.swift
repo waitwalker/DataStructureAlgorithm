@@ -185,7 +185,8 @@ class DataStructureAlgorithmTests: XCTestCase {
         // 中序遍历 递归
         rootNode.traverseInOrder(binaryTree: rootNode)
         
-        
+        // 后序遍历 递归
+        rootNode.traversePostOrder(binaryTree: rootNode)
         
         
         
