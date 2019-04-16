@@ -180,14 +180,24 @@ class DataStructureAlgorithmTests: XCTestCase {
         xicheng.rightChildNode = houhai
         
         // 先序遍历 递归
-        rootNode.traversePreOrder(binaryTree: rootNode)
+        let totalCount = rootNode.traversePreOrder(binaryTree: rootNode)
+        print(totalCount)
         
         // 中序遍历 递归
-        rootNode.traverseInOrder(binaryTree: rootNode)
+        let totalC = rootNode.traverseInOrder(binaryTree: rootNode)
+        print(totalC)
         
         // 后序遍历 递归
-        rootNode.traversePostOrder(binaryTree: rootNode)
+        let total = rootNode.traversePostOrder(binaryTree: rootNode)
+        print(total)
         
+        // 最大深度
+        let maxDepth = rootNode.maxDepth(binaryTree: rootNode)
+        print(maxDepth)
+        
+        // 最小深度
+        let minDepth = rootNode.minDepth(binaryTree: rootNode)
+        print(minDepth)
         
         
     }

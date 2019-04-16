@@ -28,40 +28,65 @@ class BinaryTree<T> {
         self.value = value
     }
     
-    
     /// 先序遍历:先根节点,然后左子树,然后右子树
     ///
     /// - Parameter binaryTree: 二叉树节点
-    func traversePreOrder(binaryTree:BinaryTree?) -> Void {
+    /// - Returns: 二叉树节点总数
+    func traversePreOrder(binaryTree:BinaryTree?) -> Int {
         
         guard let binaryTreeNode = binaryTree else { 
-            return 
+            return 0
         }
         print("当前节点值:",binaryTreeNode.value,separator: "",terminator: " \n")
-        binaryTreeNode.traversePreOrder(binaryTree: binaryTreeNode.leftChildNode)
-        binaryTreeNode.traversePreOrder(binaryTree: binaryTreeNode.rightChildNode)
+        let leftNodeCount = binaryTreeNode.traversePreOrder(binaryTree: binaryTreeNode.leftChildNode)
+        let rigthNodeCount = binaryTreeNode.traversePreOrder(binaryTree: binaryTreeNode.rightChildNode)
+        return leftNodeCount + rigthNodeCount + 1
     }
     
     
     /// 中序遍历 先左子树,然后根,然后右子树
     ///
     /// - Parameter binaryTree: 二叉树节点
-    func traverseInOrder(binaryTree:BinaryTree?) -> Void {
-        guard let binaryTreeNode = binaryTree else { return }
-        binaryTreeNode.traverseInOrder(binaryTree: binaryTreeNode.leftChildNode)
+    func traverseInOrder(binaryTree:BinaryTree?) -> Int {
+        guard let binaryTreeNode = binaryTree else { return 0}
+        let leftNodeCount = binaryTreeNode.traverseInOrder(binaryTree: binaryTreeNode.leftChildNode)
         print("当前节点值:",binaryTreeNode.value,separator: "",terminator: " \n")
-        binaryTreeNode.traverseInOrder(binaryTree: binaryTreeNode.rightChildNode)
+        let rigthNodeCount = binaryTreeNode.traverseInOrder(binaryTree: binaryTreeNode.rightChildNode)
+        return leftNodeCount + rigthNodeCount + 1
     }
     
     
     /// 后序遍历 先左子树,然后右子树,然后根
     ///
     /// - Parameter binaryTree: 二叉树节点
-    func traversePostOrder(binaryTree:BinaryTree?) -> Void {
-        guard let binaryTreeNode = binaryTree else { return }
-        binaryTreeNode.traversePostOrder(binaryTree: binaryTreeNode.leftChildNode)
-        binaryTreeNode.traversePostOrder(binaryTree: binaryTreeNode.rightChildNode)
+    func traversePostOrder(binaryTree:BinaryTree?) -> Int {
+        guard let binaryTreeNode = binaryTree else { return 0 }
+        let leftNodeCount = binaryTreeNode.traversePostOrder(binaryTree: binaryTreeNode.leftChildNode)
+        let rigthNodeCount = binaryTreeNode.traversePostOrder(binaryTree: binaryTreeNode.rightChildNode)
         print("当前节点值:",binaryTreeNode.value,separator: "",terminator: " \n")
+        return leftNodeCount + rigthNodeCount + 1
+    }
+    
+    /// 二叉树最大深度
+    ///
+    /// - Parameter binaryTree: 二叉树节点
+    /// - Returns: 最大深度
+    func maxDepth(binaryTree:BinaryTree?) -> Int {
+        guard let binaryTreeNode = binaryTree else { return 0 }
+        
+        let leftMaxDepth = maxDepth(binaryTree: binaryTreeNode.leftChildNode)
+        let rightMaxDepth = maxDepth(binaryTree: binaryTreeNode.rightChildNode)
+        return max(leftMaxDepth, rightMaxDepth) + 1
+        
+    }
+    
+    func minDepth(binaryTree:BinaryTree?) -> Int {
+        guard let binaryTreeNode = binaryTree else { return 0 }
+        let leftMinDepth = binaryTreeNode.minDepth(binaryTree: binaryTreeNode.leftChildNode)
+        let rightMinDepth = binaryTreeNode.minDepth(binaryTree: binaryTreeNode.rightChildNode)
+        return min(leftMinDepth, rightMinDepth) + 1
+        
+        
     }
 }
 
