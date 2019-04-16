@@ -11,10 +11,6 @@
 
 import UIKit
 
-// 二叉树节点个数
-fileprivate(set) var kBinaryTreeCount:Int = 0
-
-
 // MARK: - 二叉树的定义
 class BinaryTree<T> {
     
@@ -27,14 +23,6 @@ class BinaryTree<T> {
     // 右子树
     var rightChildNode:BinaryTree?
     
-    // 节点个数
-    var count:Int {
-        get {
-            return kBinaryTreeCount
-        }
-    }
-    
-    
     // MARK: - 构造方法
     init(value:T) {
         self.value = value
@@ -43,17 +31,26 @@ class BinaryTree<T> {
     
     /// 先序遍历:先根节点,然后左子树,然后右子树
     ///
-    /// - Parameter binaryTree: 根节点
+    /// - Parameter binaryTree: 二叉树节点
     func traversePreOrder(binaryTree:BinaryTree?) -> Void {
         
         guard let binaryTreeNode = binaryTree else { 
-            print("节点总数:\(kBinaryTreeCount)")
             return 
         }
-        kBinaryTreeCount += 1
-        print(binaryTreeNode.value,separator: "",terminator: " ")
+        print("当前节点值:",binaryTreeNode.value,separator: "",terminator: " \n")
         binaryTreeNode.traversePreOrder(binaryTree: binaryTreeNode.leftChildNode)
         binaryTreeNode.traversePreOrder(binaryTree: binaryTreeNode.rightChildNode)
+    }
+    
+    
+    /// 中序遍历 先左子树,然后根,然后右子树
+    ///
+    /// - Parameter binaryTree: 二叉树节点
+    func traverseInOrder(binaryTree:BinaryTree?) -> Void {
+        guard let binaryTreeNode = binaryTree else { return }
+        binaryTreeNode.traverseInOrder(binaryTree: binaryTreeNode.leftChildNode)
+        print("当前节点值:",binaryTreeNode.value,separator: "",terminator: " \n")
+        binaryTreeNode.traverseInOrder(binaryTree: binaryTreeNode.rightChildNode)
     }
 }
 
