@@ -77,11 +77,10 @@ class BinaryTree<T> {
         let leftMaxDepth = maxDepth(binaryTree: binaryTreeNode.leftChildNode)
         let rightMaxDepth = maxDepth(binaryTree: binaryTreeNode.rightChildNode)
         return max(leftMaxDepth, rightMaxDepth) + 1
-        
     }
     
     
-    /// 最小深度
+    /// 二叉树最小深度
     ///
     /// - Parameter binaryTree: 二叉树节点
     /// - Returns: 最小深度
