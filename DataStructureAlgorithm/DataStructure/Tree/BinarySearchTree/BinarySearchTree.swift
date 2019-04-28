@@ -18,4 +18,27 @@ class BinarySearchTree <T:Comparable> {
         self.root = BinaryTree(value: value)
     }
     
+    /***
+     根节点开始查找,如果根节点的value与待查找的相等,直接返回;
+     如果待查找的值大于根节点的值,则在二叉查找树的右子树查找;
+     如果待查找的值小于根节点的值,则在二叉查找树的左子树查找.
+     递归执行
+     */
+    /// 查找例程
+    ///
+    /// - Parameter value: 待查找的值
+    /// - Returns: 查找到的值
+    func find(value:T) -> BinaryTree<T>? {
+        let current = root
+        guard let node = current else { return nil }
+        
+        if node.value == value {
+            return node
+        } else if value <= node.value {
+            return find(value: (node.leftChildNode?.value)!)
+        } else {
+            return find(value: (node.rightChildNode?.value)!)
+        }
+    }
+    
 }
