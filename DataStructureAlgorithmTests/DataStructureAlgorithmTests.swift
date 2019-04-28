@@ -223,6 +223,9 @@ class DataStructureAlgorithmTests: XCTestCase {
         let node = binarySearchTreeNode.find(binaryTree: binarySearchTreeNode.root, value: 128)
         print(node?.value as Any)
         
+        // 删除
+        binarySearchTreeNode.delete(value: 128)
+        
         
     }
 

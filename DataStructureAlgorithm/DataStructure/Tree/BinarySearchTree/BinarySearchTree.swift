@@ -64,4 +64,49 @@ class BinarySearchTree <T:Comparable> {
         return node
     }
     
+    /***
+     删除例程分为3种情况:
+     1)删除的节点是叶子节点,直接删除
+     2)删除的节点只有一个儿子,则将其儿子赋值给当前节点
+     3)删除的节点有两个儿子,需要将此节点替换为左子树最大的子节点或者右子树最小子节点
+     */
+    
+    func delete(value:T) -> Void {
+        root = delete(binaryTree: root, value: value)
+    }
+    
+    private func delete(binaryTree:BinaryTree<T>?, value:T) -> BinaryTree<T>? {
+        guard let node = binaryTree else { return nil }
+        if node.value == value {
+            
+            // 左右节点都为空
+            if node.leftChildNode == nil && node.rightChildNode == nil {
+                return nil
+            } 
+            
+            // 左右节点有一个为空
+            if node.leftChildNode == nil {
+                return node.rightChildNode
+            }
+            
+            if node.rightChildNode == nil {
+                return node.leftChildNode
+            }
+            
+            // 左右节点都不为空
+            // 将左子树中最小的节点赋值给当前节点
+            node.value = (node.rightChildNode?.minNode.value)!
+            
+            // 删除右子树中最小节点
+            node.rightChildNode = delete(binaryTree: node.rightChildNode, value: node.value)
+            
+        } else if value < node.value {
+            node.leftChildNode = delete(binaryTree: node.leftChildNode, value: value)
+        } else {
+            node.rightChildNode = delete(binaryTree: node.rightChildNode, value: value)
+        }
+        
+        return node
+    }
+    
 }

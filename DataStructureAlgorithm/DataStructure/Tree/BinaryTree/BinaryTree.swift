@@ -23,6 +23,12 @@ class BinaryTree <T: Comparable> {
     // 右子树
     var rightChildNode:BinaryTree?
     
+    // 最小节点
+    var minNode:BinaryTree {
+        return leftChildNode?.minNode ?? self
+    }
+    
+    
     // MARK: - 构造方法
     init(value:T) {
         self.value = value
