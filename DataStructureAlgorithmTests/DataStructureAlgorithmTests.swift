@@ -208,6 +208,8 @@ class DataStructureAlgorithmTests: XCTestCase {
     // 二叉查找树测试
     func binarySearchTreeTest() -> Void {
         let binarySearchTreeNode = BinarySearchTree(value: 123)
+        
+        // 插入
         binarySearchTreeNode.insert(value: 120)
         binarySearchTreeNode.insert(value: 121)
         binarySearchTreeNode.insert(value: 119)
@@ -216,6 +218,11 @@ class DataStructureAlgorithmTests: XCTestCase {
         binarySearchTreeNode.insert(value: 130)
         binarySearchTreeNode.insert(value: 139)
         print(binarySearchTreeNode.root?.value as Any)
+        
+        // 查找
+        let node = binarySearchTreeNode.find(binaryTree: binarySearchTreeNode.root, value: 128)
+        print(node?.value as Any)
+        
         
     }
 

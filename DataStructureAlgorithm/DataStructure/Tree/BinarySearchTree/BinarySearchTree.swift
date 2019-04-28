@@ -28,16 +28,15 @@ class BinarySearchTree <T:Comparable> {
     ///
     /// - Parameter value: 待查找的值
     /// - Returns: 查找到的值
-    func find(value:T) -> BinaryTree<T>? {
-        let current = root
-        guard let node = current else { return nil }
+    func find(binaryTree:BinaryTree<T>?, value:T) -> BinaryTree<T>? {
+        guard let node = binaryTree else { return nil }
         
         if node.value == value {
             return node
-        } else if value <= node.value {
-            return find(value: (node.leftChildNode?.value)!)
+        } else if value < node.value {
+            return find(binaryTree: node.leftChildNode, value: value)
         } else {
-            return find(value: (node.rightChildNode?.value)!)
+            return find(binaryTree: node.rightChildNode, value: value)
         }
     }
     
