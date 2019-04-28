@@ -109,4 +109,18 @@ class BinarySearchTree <T:Comparable> {
         return node
     }
     
+    
+    /// 最小值
+    ///
+    /// - Returns: <#return value description#>
+    func min() -> BinaryTree<T>? {
+        guard let node = root else { return nil }
+        var tmp = node
+        
+        while tmp.leftChildNode != nil {
+            tmp = tmp.leftChildNode!
+        }
+        return tmp
+    }
+    
 }

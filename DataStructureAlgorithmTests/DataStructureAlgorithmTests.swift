@@ -226,6 +226,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         // 删除
         binarySearchTreeNode.delete(value: 128)
         
+        // 最小值
+        let min = binarySearchTreeNode.min()
+        print(min?.value as Any)
+        
         
     }
 
