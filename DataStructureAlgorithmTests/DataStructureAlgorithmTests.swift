@@ -203,6 +203,19 @@ class DataStructureAlgorithmTests: XCTestCase {
         let tota = rootNode.traversePreOrderNonrecursive(binaryTree: rootNode)
         print(tota)
         
+    }
+    
+    // 二叉查找树测试
+    func binarySearchTreeTest() -> Void {
+        let binarySearchTreeNode = BinarySearchTree(value: 123)
+        binarySearchTreeNode.insert(value: 120)
+        binarySearchTreeNode.insert(value: 121)
+        binarySearchTreeNode.insert(value: 119)
+        binarySearchTreeNode.insert(value: 126)
+        binarySearchTreeNode.insert(value: 128)
+        binarySearchTreeNode.insert(value: 130)
+        binarySearchTreeNode.insert(value: 139)
+        print(binarySearchTreeNode.root?.value as Any)
         
     }
 
@@ -226,7 +239,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         //treeTest()
         
         // 二叉树测试
-        binaryTreeTest()
+        //binaryTreeTest()
+        
+        // 二叉查找树测试
+        binarySearchTreeTest()
 
     }
     

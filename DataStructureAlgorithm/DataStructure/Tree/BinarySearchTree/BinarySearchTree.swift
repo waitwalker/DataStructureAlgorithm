@@ -41,4 +41,28 @@ class BinarySearchTree <T:Comparable> {
         }
     }
     
+    /***
+     1)先创建一个新节点,如果新节点的值与根节点的值相等,则插入到根节点位置
+     2)如果新节点的值小于等于根节点的值,则将新节点赋值给根节点的左子树
+     3)如果新节点的值大于根节点的值,则将新节点赋值给根节点的右子树
+     4)递归执行以上步骤
+     */
+    /// 插入例程
+    ///
+    /// - Parameter value: 插入的值
+    /// - Returns: 插入后返回的二叉查找树
+    func insert(value:T) -> Void {
+        root = insert(root: root, value: value)
+    }
+    
+    private func insert(root binaryTree:BinaryTree<T>?, value:T) -> BinaryTree<T>? {
+        guard let node = binaryTree else { return BinaryTree(value: value) }
+        if value <= node.value {
+            node.leftChildNode = insert(root: node.leftChildNode, value: value)
+        } else {
+            node.rightChildNode = insert(root: node.rightChildNode, value: value)
+        }
+        return node
+    }
+    
 }
