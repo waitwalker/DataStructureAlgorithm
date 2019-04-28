@@ -12,7 +12,7 @@
 import UIKit
 
 // MARK: - 二叉树的定义
-class BinaryTree<T> {
+class BinaryTree <T: Comparable> {
     
     // 节点value
     var value:T
@@ -118,6 +118,10 @@ class BinaryTree<T> {
             }
         }
         return count
+    }
+    
+    static func == <T>(lhs: BinaryTree<T>, rhs: BinaryTree<T>) -> Bool {
+        return lhs.value == rhs.value
     }
 }
 
