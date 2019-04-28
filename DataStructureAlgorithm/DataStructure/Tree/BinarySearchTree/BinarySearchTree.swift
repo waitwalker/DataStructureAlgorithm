@@ -112,13 +112,26 @@ class BinarySearchTree <T:Comparable> {
     
     /// 最小值
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: 最小值节点
     func min() -> BinaryTree<T>? {
         guard let node = root else { return nil }
         var tmp = node
         
         while tmp.leftChildNode != nil {
             tmp = tmp.leftChildNode!
+        }
+        return tmp
+    }
+    
+    
+    /// 最大值
+    ///
+    /// - Returns: 最大值节点
+    func max() -> BinaryTree<T>? {
+        guard let node = root else { return nil }
+        var tmp = node
+        while tmp.rightChildNode != nil {
+            tmp = node.rightChildNode!
         }
         return tmp
     }

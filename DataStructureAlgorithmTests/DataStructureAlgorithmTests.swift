@@ -230,6 +230,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         let min = binarySearchTreeNode.min()
         print(min?.value as Any)
         
+        // 最大值
+        let max = binarySearchTreeNode.max()
+        print(max?.value as Any)
+        
         
     }
 
