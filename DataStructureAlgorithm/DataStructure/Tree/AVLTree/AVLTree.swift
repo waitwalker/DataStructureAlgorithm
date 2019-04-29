@@ -65,4 +65,15 @@ class AVLTree<T:Comparable> {
         return pivot
     }
     
+    
+    /// 左右旋转
+    ///
+    /// - Parameter binaryTreeNode: 待旋转的节点
+    /// - Returns: 选择后的节点
+    func leftRightRotate(binaryTreeNode:BinaryTree<T>?) -> BinaryTree<T>? {
+        guard let leftChild = binaryTreeNode?.leftChildNode else { return binaryTreeNode }
+        binaryTreeNode?.leftChildNode = leftRotate(binaryTreeNode: leftChild)
+        return rightRotate(binaryTreeNode: binaryTreeNode)
+    }
+    
 }
