@@ -233,6 +233,16 @@ class DataStructureAlgorithmTests: XCTestCase {
         // 最大值
         let max = binarySearchTreeNode.max()
         print(max?.value as Any)
+    }
+    
+    // AVL树测试
+    func AVLTreeTest() -> Void {
+        
+        let avlTree = AVLTree(value: 123)
+        
+        // 查找
+        let node = avlTree.find(binaryTreeNode: avlTree.root, value: 123)
+        print(node?.value as Any)
         
         
     }
@@ -260,7 +270,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         //binaryTreeTest()
         
         // 二叉查找树测试
-        binarySearchTreeTest()
+        //binarySearchTreeTest()
+        
+        // AVL树测试
+        AVLTreeTest()
 
     }
     

@@ -28,6 +28,20 @@ class BinaryTree <T: Comparable> {
         return leftChildNode?.minNode ?? self
     }
     
+    // 高度
+    var height:Int = 0
+    
+    // 左子树高度
+    var leftHeight:Int {
+        return leftChildNode?.height ?? -1
+    }
+    
+    // 右子树
+    var rightHeight:Int {
+        return rightChildNode?.height ?? -1
+    }
+    
+    
     
     // MARK: - 构造方法
     init(value:T) {

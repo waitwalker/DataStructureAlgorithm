@@ -19,6 +19,7 @@
 		CA66BB5F225EC8ED0038B52B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66BB5E225EC8ED0038B52B /* Stack.swift */; };
 		CA66BB62225F150B0038B52B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66BB61225F150B0038B52B /* Queue.swift */; };
 		CA7F5A00226589A5007E3C93 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F59FF226589A5007E3C93 /* BinaryTree.swift */; };
+		CA8430CB2276C6AB000613DC /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8430CA2276C6AB000613DC /* AVLTree.swift */; };
 		CA9E099A227537C700B5ADBB /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E0999227537C700B5ADBB /* BinarySearchTree.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		CA66BB5E225EC8ED0038B52B /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		CA66BB61225F150B0038B52B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		CA7F59FF226589A5007E3C93 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		CA8430CA2276C6AB000613DC /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
 		CA9E0999227537C700B5ADBB /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 		1A86000022635206003ACC9B /* Tree */ = {
 			isa = PBXGroup;
 			children = (
+				CA8430C92276C696000613DC /* AVLTree */,
 				CA9E099822752E6000B5ADBB /* BinarySearchTree */,
 				CA7F59FE22658968007E3C93 /* BinaryTree */,
 				1A8600012263521E003ACC9B /* Tree */,
@@ -197,6 +200,14 @@
 				CA7F59FF226589A5007E3C93 /* BinaryTree.swift */,
 			);
 			path = BinaryTree;
+			sourceTree = "<group>";
+		};
+		CA8430C92276C696000613DC /* AVLTree */ = {
+			isa = PBXGroup;
+			children = (
+				CA8430CA2276C6AB000613DC /* AVLTree.swift */,
+			);
+			path = AVLTree;
 			sourceTree = "<group>";
 		};
 		CA9E099822752E6000B5ADBB /* BinarySearchTree */ = {
@@ -338,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8430CB2276C6AB000613DC /* AVLTree.swift in Sources */,
 				CA66BB62225F150B0038B52B /* Queue.swift in Sources */,
 				CA7F5A00226589A5007E3C93 /* BinaryTree.swift in Sources */,
 				CA66BB5F225EC8ED0038B52B /* Stack.swift in Sources */,
