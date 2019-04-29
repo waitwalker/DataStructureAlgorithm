@@ -39,7 +39,6 @@ class AVLTree<T:Comparable> {
         }
     }
     
-    
     /// 左旋转
     ///
     /// - Parameter binaryTreeNode: 待旋转的节点
@@ -48,6 +47,19 @@ class AVLTree<T:Comparable> {
         guard let pivot = binaryTreeNode?.rightChildNode else { return binaryTreeNode }
         binaryTreeNode?.rightChildNode = pivot.rightChildNode
         pivot.leftChildNode = binaryTreeNode
+        binaryTreeNode?.height = max((binaryTreeNode?.leftHeight)!, (binaryTreeNode?.rightHeight)!) + 1
+        pivot.height = max(pivot.leftHeight, pivot.rightHeight) + 1
+        return pivot
+    }
+    
+    /// 右旋转
+    ///
+    /// - Parameter binaryTreeNode: 待旋转的节点
+    /// - Returns: 旋转后的节点
+    func rightRotate(binaryTreeNode:BinaryTree<T>?) -> BinaryTree<T>? {
+        guard let pivot = binaryTreeNode?.rightChildNode else { return binaryTreeNode }
+        binaryTreeNode?.leftChildNode = pivot.rightChildNode
+        pivot.rightChildNode = binaryTreeNode
         binaryTreeNode?.height = max((binaryTreeNode?.leftHeight)!, (binaryTreeNode?.rightHeight)!) + 1
         pivot.height = max(pivot.leftHeight, pivot.rightHeight) + 1
         return pivot
