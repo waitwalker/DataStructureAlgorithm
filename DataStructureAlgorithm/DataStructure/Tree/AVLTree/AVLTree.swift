@@ -110,4 +110,24 @@ class AVLTree<T:Comparable> {
             return binaryTreeNode
         }
     }
+    
+    
+    /// 插入操作
+    ///
+    /// - Parameter value: 待插入的值
+    func insert(value:T) -> Void {
+        root = insert(binaryTreeNode: root, value: value)
+    }
+    
+    private func insert(binaryTreeNode:BinaryTree<T>?, value:T) -> BinaryTree<T>? {
+        guard let node = binaryTreeNode else { return BinaryTree(value: value) }
+        if value < node.value {
+            node.leftChildNode = insert(binaryTreeNode: node.leftChildNode, value: value)
+        } else {
+            node.rightChildNode = insert(binaryTreeNode: node.rightChildNode, value: value)
+        }
+        let balanceNode = balance(binaryTreeNode: node)
+        balanceNode.height = max(balanceNode.leftHeight, balanceNode.rightHeight) + 1
+        return balanceNode
+    }
 }

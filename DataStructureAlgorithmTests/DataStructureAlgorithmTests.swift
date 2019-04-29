@@ -244,6 +244,12 @@ class DataStructureAlgorithmTests: XCTestCase {
         let node = avlTree.find(binaryTreeNode: avlTree.root, value: 123)
         print(node?.value as Any)
         
+        avlTree.insert(value: 121)
+        avlTree.insert(value: 124)
+        avlTree.insert(value: 167)
+        avlTree.insert(value: 188)
+        avlTree.insert(value: 111)
+        avlTree.insert(value: 12)
         
     }
 
