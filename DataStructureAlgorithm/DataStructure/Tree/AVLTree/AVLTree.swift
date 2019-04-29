@@ -14,13 +14,13 @@ import UIKit
 
 // MARK: - AVL树
 class AVLTree<T:Comparable> {
+    
     private(set) var root:BinaryTree<T>?
     
     // MARK: - 构造函数
     init(value:T) {
         self.root = BinaryTree(value: value)
     }
-    
     
     /// 查找操作    
     ///
@@ -37,6 +37,20 @@ class AVLTree<T:Comparable> {
         } else {
             return find(binaryTreeNode: node.rightChildNode, value: value)
         }
+    }
+    
+    
+    /// 左旋转
+    ///
+    /// - Parameter binaryTreeNode: 待旋转的节点
+    /// - Returns: 旋转后的节点
+    func leftRotate(binaryTreeNode:BinaryTree<T>?) -> BinaryTree<T>? {
+        guard let pivot = binaryTreeNode?.rightChildNode else { return binaryTreeNode }
+        binaryTreeNode?.rightChildNode = pivot.rightChildNode
+        pivot.leftChildNode = binaryTreeNode
+        binaryTreeNode?.height = max((binaryTreeNode?.leftHeight)!, (binaryTreeNode?.rightHeight)!) + 1
+        pivot.height = max(pivot.leftHeight, pivot.rightHeight) + 1
+        return pivot
     }
     
 }
