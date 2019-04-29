@@ -87,4 +87,27 @@ class AVLTree<T:Comparable> {
         return leftRotate(binaryTreeNode: binaryTreeNode)
     }
     
+    
+    /// 平衡AVL树
+    ///
+    /// - Parameter binaryTreeNode: 待平衡的节点
+    /// - Returns: 平衡后的节点
+    func balance(binaryTreeNode:BinaryTree<T>) -> BinaryTree<T> {
+        switch binaryTreeNode.balanceFactor {
+        case 2:
+            if let leftChild = binaryTreeNode.leftChildNode, leftChild.balanceFactor == -1 {
+                return leftRightRotate(binaryTreeNode: binaryTreeNode)!
+            } else {
+                return rightRotate(binaryTreeNode: binaryTreeNode)!
+            }
+        case -2:
+            if let rightChild = binaryTreeNode.rightChildNode, rightChild.balanceFactor == -1 {
+                return rightLeftRotate(binaryTreeNode: binaryTreeNode)!
+            } else {
+                return leftRotate(binaryTreeNode: binaryTreeNode)!
+            }
+        default:
+            return binaryTreeNode
+        }
+    }
 }

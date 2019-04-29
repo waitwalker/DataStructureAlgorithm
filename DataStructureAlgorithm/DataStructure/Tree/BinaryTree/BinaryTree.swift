@@ -41,6 +41,10 @@ class BinaryTree <T: Comparable> {
         return rightChildNode?.height ?? -1
     }
     
+    // 平衡条件
+    var balanceFactor:Int {
+        return leftHeight - rightHeight
+    }
     
     
     // MARK: - 构造方法
