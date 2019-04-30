@@ -20,6 +20,7 @@
 		CA66BB62225F150B0038B52B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66BB61225F150B0038B52B /* Queue.swift */; };
 		CA7F5A00226589A5007E3C93 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7F59FF226589A5007E3C93 /* BinaryTree.swift */; };
 		CA8430CB2276C6AB000613DC /* AVLTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8430CA2276C6AB000613DC /* AVLTree.swift */; };
+		CA8BA1B52277F6E0000B5C89 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BA1B42277F6E0000B5C89 /* Heap.swift */; };
 		CA9E099A227537C700B5ADBB /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9E0999227537C700B5ADBB /* BinarySearchTree.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		CA66BB61225F150B0038B52B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		CA7F59FF226589A5007E3C93 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		CA8430CA2276C6AB000613DC /* AVLTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLTree.swift; sourceTree = "<group>"; };
+		CA8BA1B42277F6E0000B5C89 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		CA9E0999227537C700B5ADBB /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 		CA2425BF225C3B510069CF87 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				CA8BA1B32277F6AF000B5C89 /* Heap(PriorityQueue) */,
 				1A86000022635206003ACC9B /* Tree */,
 				CA66BB60225F14F70038B52B /* Queue */,
 				CA66BB5D225EC8DB0038B52B /* Stack */,
@@ -208,6 +211,14 @@
 				CA8430CA2276C6AB000613DC /* AVLTree.swift */,
 			);
 			path = AVLTree;
+			sourceTree = "<group>";
+		};
+		CA8BA1B32277F6AF000B5C89 /* Heap(PriorityQueue) */ = {
+			isa = PBXGroup;
+			children = (
+				CA8BA1B42277F6E0000B5C89 /* Heap.swift */,
+			);
+			path = "Heap(PriorityQueue)";
 			sourceTree = "<group>";
 		};
 		CA9E099822752E6000B5ADBB /* BinarySearchTree */ = {
@@ -350,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8430CB2276C6AB000613DC /* AVLTree.swift in Sources */,
+				CA8BA1B52277F6E0000B5C89 /* Heap.swift in Sources */,
 				CA66BB62225F150B0038B52B /* Queue.swift in Sources */,
 				CA7F5A00226589A5007E3C93 /* BinaryTree.swift in Sources */,
 				CA66BB5F225EC8ED0038B52B /* Stack.swift in Sources */,
