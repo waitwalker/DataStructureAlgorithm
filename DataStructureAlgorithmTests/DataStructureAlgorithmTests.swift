@@ -252,6 +252,29 @@ class DataStructureAlgorithmTests: XCTestCase {
         avlTree.insert(value: 12)
         
     }
+    
+    // 堆测试
+    func heapTest() -> Void {
+        let heap = Heap<Int>()
+        
+        // 插入
+        heap.insert(element: 23)
+        heap.insert(element: 89)
+        heap.insert(element: 12)
+        heap.insert(element: 18)
+        heap.insert(element: 16)
+        heap.insert(element: 25)
+        
+        let leftIndex = heap.leftChildIndex(index: 1)
+        let rightIndex = heap.rightChildIndex(index: 1)
+        
+        print(leftIndex)
+        print(rightIndex)
+        
+        print(heap.elements)
+        
+        
+    }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -279,7 +302,10 @@ class DataStructureAlgorithmTests: XCTestCase {
         //binarySearchTreeTest()
         
         // AVL树测试
-        AVLTreeTest()
+        //AVLTreeTest()
+        
+        // 堆测试
+        heapTest()
 
     }
     
