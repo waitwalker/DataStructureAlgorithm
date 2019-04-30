@@ -130,4 +130,39 @@ class AVLTree<T:Comparable> {
         balanceNode.height = max(balanceNode.leftHeight, balanceNode.rightHeight) + 1
         return balanceNode
     }
+    
+    
+    /// 删除操作
+    ///
+    /// - Parameter value: 待删除的值
+    func delete(value:T) -> Void {
+        root = delete(binaryTreeNode: root, value: value)
+    }
+    
+    func delete(binaryTreeNode:BinaryTree<T>?, value:T) -> BinaryTree<T>? {
+        guard let node = binaryTreeNode else { return nil }
+        if node.value == value {
+            if node.leftChildNode == nil && node.rightChildNode == nil {
+                return nil
+            }
+            
+            if node.leftChildNode == nil {
+                return node.rightChildNode
+            }
+            
+            if node.rightChildNode == nil {
+                return node.leftChildNode
+            }
+            
+            node.value = (node.rightChildNode?.minNode.value)!
+            node.rightChildNode = delete(binaryTreeNode: node.rightChildNode, value: node.value)
+        } else if value < node.value {
+            node.leftChildNode = delete(binaryTreeNode: node.leftChildNode, value: value)
+        } else {
+            node.rightChildNode = delete(binaryTreeNode: node.rightChildNode, value: value)
+        }
+        let balanceNode = balance(binaryTreeNode: node)
+        balanceNode.height = max(balanceNode.leftHeight, balanceNode.rightHeight) + 1
+        return balanceNode
+    }
 }
