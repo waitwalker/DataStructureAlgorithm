@@ -273,6 +273,9 @@ class DataStructureAlgorithmTests: XCTestCase {
         
         print(heap.elements)
         
+        heap.delete()
+        
+        print(heap.elements)
         
     }
 

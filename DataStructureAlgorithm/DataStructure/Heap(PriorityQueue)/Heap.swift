@@ -90,7 +90,7 @@ class Heap<T:Comparable> {
     /// 上滤
     ///
     /// - Parameter index: 当前索引
-    func shiftUp(index:Int) -> Void {
+    private func shiftUp(index:Int) -> Void {
         let parentIndex = self.parentIndex(index: index)
         guard isHigherPriority(firstIndex: index, secondIndex: parentIndex) else {
             return
@@ -126,5 +126,54 @@ class Heap<T:Comparable> {
             return
         }
         elements.swapAt(firstIndex, secondIndex)
+    }
+    
+    /***
+        1)删除操作通常将最大堆元素移除,及根节点移除,首先将根节点与最后的元素互换位置
+        2)删除最后的元素(即移到最后的根元素)
+        3)将移动到root位置的新根节点与其子节点进行比较,如果其小于子节点,则与子节点互换位置
+        4)递归
+     */
+    /// 删除操作
+    func delete() -> Void {
+        guard !isEmpty else {
+            return
+        }
+        
+        swapElement(with: 0, and: count - 1)
+        
+        elements.removeLast()
+        
+        guard !isEmpty else {
+            return
+        }
+        
+        shiftDown(elememtIndex: 0)
+    }
+    
+    
+    /// 下滤
+    ///
+    /// - Parameter elememtIndex: 元素索引
+    func shiftDown(elememtIndex:Int) -> Void {
+        // 获取当前节点与其子节点的高优先级的节点
+        var tmpIndex = elememtIndex
+        let leftIndex = leftChildIndex(index: elememtIndex)
+        let rightIndex = rightChildIndex(index: elememtIndex)
+        
+        if leftIndex < count && isHigherPriority(firstIndex: leftIndex, secondIndex: rightIndex) {
+            tmpIndex = leftIndex
+        }
+        
+        if rightIndex < count && isHigherPriority(firstIndex: rightIndex, secondIndex: leftIndex) {
+            tmpIndex = rightIndex
+        }
+        
+        if elememtIndex == tmpIndex {
+            return
+        }
+        
+        swapElement(with: elememtIndex, and: tmpIndex)
+        shiftDown(elememtIndex: tmpIndex)
     }
 }
